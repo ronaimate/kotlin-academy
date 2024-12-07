@@ -28,6 +28,15 @@ fun main() {
         println(c)
     }
 
+    println(Utils().upperFirstAndLast("this is all in lowercase"))
+    println("this is all in lowercase".upperFirstAndLast())
+
+}
+
+fun String.upperFirstAndLast(): String {
+    val upperFirst = substring(0, 1).uppercase() + substring(1)
+    return upperFirst.substring(0, upperFirst.length - 1) +
+            substring(upperFirst.length - 1, upperFirst.length).uppercase()
 }
 
 // vararg not must last position, but need use named argument the other arguments
@@ -56,7 +65,14 @@ fun whatever() = 3 * 4
 //    return ("$label ${opearand1 * operand2}")
 //}
 
-fun labelMultiply(
+//fun labelMultiply(
+//    opearand1: Int, operand2: Int,
+//    label: String = "The answer is:"
+//) = // expression body
+//    "$label ${opearand1 * operand2}"
+
+
+inline fun labelMultiply(
     opearand1: Int, operand2: Int,
     label: String = "The answer is:"
 ) = // expression body
