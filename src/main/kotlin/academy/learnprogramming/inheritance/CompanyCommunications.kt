@@ -3,6 +3,9 @@ package academy.learnprogramming.inheritance
 import java.time.Year
 
 fun main() {
+
+    println(Department.ACCOUNTING.getDepInfo())
+
     println(CompanyCommunications.getTagLine())
     println(CompanyCommunications.getCopyrightLine())
 
@@ -16,17 +19,14 @@ fun main() {
     println(someClass2.someString)
 
 
-
-
     val myAnonymousObject = object {
         val valueInAnonymousObject = "This is anonymous object"
-        fun functionInAnonymousFunction():String {
+        fun functionInAnonymousFunction(): String {
             return "This is a function in anonymous object"
         }
     }
     println(myAnonymousObject.valueInAnonymousObject)
     println(myAnonymousObject.functionInAnonymousFunction())
-
 
 
     var thisIsMutable = 45
@@ -39,6 +39,15 @@ fun main() {
     })
 
     println(thisIsMutable)
+}
+
+enum class Department(val fullName: String, val numEmployees: Int) {
+    HR("Human Resouces", 5),
+    IT("Information Technology", 10),
+    ACCOUNTING("Accounting", 3),
+    SALES("Sales", 20);
+
+    fun getDepInfo() = "The $fullName department has $numEmployees employees"
 }
 
 object CompanyCommunications {
