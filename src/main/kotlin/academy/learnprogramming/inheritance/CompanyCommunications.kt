@@ -50,12 +50,15 @@ enum class Department(val fullName: String, val numEmployees: Int) {
     fun getDepInfo() = "The $fullName department has $numEmployees employees"
 }
 
+//private fun topLevel(str: String) = println(" Top level functionm: $str")
+fun topLevel(str: String) = println(" Top level functionm: $str")
+
 object CompanyCommunications {
 
     val curentYear = Year.now().value
 
     fun getTagLine() = "Out company Rocks!"
-    fun getCopyrightLine() = "Copyright \u00A9 Out Company. All reights reserved."
+    internal fun getCopyrightLine() = "Copyright \u00A9 Out Company. All reights reserved." // only can user in this maven module (now i have only thid module, but if I make a new module I cant use this fn in the new module
 
 }
 
