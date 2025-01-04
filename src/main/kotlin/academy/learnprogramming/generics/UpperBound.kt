@@ -24,7 +24,7 @@ fun main() {
         println(strList[1].replace("str", "string"))
     }
 
-    convertToInt(ints)
+    academy.learnprogramming.generics.coverance.convertToInt(ints)
     convertToInt(shorts)
     convertToInt(floats)
 //    convertToInt(strings)
